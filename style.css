@@ -1,0 +1,290 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    overflow-x: hidden;
+}
+
+body{
+    background-color: #FBFBFF;
+    margin: 0 ;
+    overflow-x: hidden;
+    font-family: 'Rokkitt', serif; ;
+}
+
+/*Fond d'écran blanc*/
+.home-background{
+    background-image: url('Images/paysage.jpeg');
+    background-size: cover ;
+    background-position-y: center;
+}
+
+
+.lineonside {
+    text-align:center;
+    text-transform:uppercase;
+    font-weight:100;
+    
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    grid-template-rows: 20px 0;
+    grid-gap: 20px;
+  }
+  
+  .lineonside:after, .lineonside:before {
+    content: " ";
+    display: block;
+    border-bottom: 3px solid #EAC435;
+  }
+
+  span{
+    color: #EAC435;
+  }
+
+  a{
+      text-decoration: none;
+  }
+
+
+/*Fond d'écran bleu*/
+.blue-background{
+    background-color: #01172F;
+}
+
+li{
+    list-style: none;
+}
+
+
+.footerText{
+    display: flex;
+    justify-content: center;
+    margin-top: 2%;
+}
+
+.footerText p{
+    padding: 10px;
+}
+
+.frame-contact{
+    padding: 20px;
+    box-shadow: rgba(17, 17, 26, 0.1) 0px 0px 16px;
+    border-radius: 5px;
+}
+
+i{
+    color: white;
+}
+
+a, i:hover{
+    text-decoration: none;
+    color: #EAC435;
+    transition: 0.3s ease-in;
+}
+
+/*Contact*/
+.contactMobile{
+    display: flex;
+    flex-direction: column;
+}
+
+.logo-contact{
+    padding: 20px;
+}
+
+.divMap{
+    width: 1000px;
+    height: 500px;
+    }
+
+    .map{
+        width: 450px;
+        height: 450px;
+    }
+
+
+/* Menu */
+nav{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    min-height: 8vh;
+    background-color: #01172F;
+}
+
+
+.nav-links{
+    display: flex;
+    justify-content: space-around;
+    width: 30%; 
+    margin-bottom: 0;
+}
+
+.nav-links li {
+    list-style: none;
+    
+}
+
+
+.nav-links a{
+    color: white;
+    text-decoration: none;
+    letter-spacing: 3px;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.burger{
+    display: none;
+    cursor: pointer;
+}
+
+.burger div{
+    width: 25px;
+    height: 3px;
+    background-color: white;
+    margin: 5px;
+    transition: all 0.3s ease;
+}
+
+
+
+@media screen and (max-width:1024px){
+
+    *{
+        margin: 0;
+        overflow-x: hidden;
+    }
+
+    .nav-links{
+        width: 50%;
+    }
+
+}
+
+@media screen and (max-width:768px){
+    /*Menu mobile*/
+    *{
+        margin: 0;
+        overflow-x: hidden;
+    }
+
+    .nav-links{
+        position: absolute;
+        right: 0px;
+        height: 20vh;
+        top: 13vh;
+        background-color: #01172F;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 50%;
+        transform: translateX(100%);
+        transition: transform 0.5s ease-in;
+    }
+
+    .nav-links li{
+        opacity: 0;
+    }
+
+    .burger{
+        display: block;
+    }
+
+    .nav-inactive{
+        display: none;
+    }
+
+    /*Contact mobile*/
+
+    .divMap{
+    width: 425px;
+    height: 400px;
+    }
+
+    .map{
+        width: 350px;
+        height: 350px;
+    }
+
+    /*Footer mobile*/
+
+    .footerText{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-top: 25px;
+    }
+}
+
+.nav-active{
+    transform: translateX(0%);
+}
+
+
+
+
+@keyframes navLinkFade{
+    from{
+        opacity: 0;
+        transform: translateX(50px);
+    }
+
+    to{
+        opacity: 1;
+        transform: translateX(0px);
+    }
+}
+
+.toggle .line1{
+    transform: rotate(-45deg) translate(-5px, 6px);
+    background-color: #EAC435;
+}
+
+.toggle .line2{
+    opacity: 0;
+}
+
+.toggle .line3{
+    transform: rotate(45deg) translate(-5px, -6px);
+    background-color: #EAC435;
+}
+
+
+/* LINK HOVER UNDERLINE */
+.cool-link {
+    display: inline-block;
+    color: #EAC435;
+    text-decoration: none;
+    display: inline-table;
+}
+
+.cool-link:hover{
+    text-decoration: none;
+}
+
+.cool-link::after {
+    content: '';
+    display: block;
+    width: 0;
+    height: 5px;
+    background: #EAC435;
+    transition: width .3s;
+}
+
+.cool-link::before{
+    transform: scaleX(1);
+}
+
+.cool-link:hover::after {
+    width: 100%;
+    transition: width .3s;
+} 
+
+.logo-contact{
+    color: #EAC435;
+}
+
+li .cool-link{
+    display: inline-table;
+}
